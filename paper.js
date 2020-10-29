@@ -5,8 +5,8 @@ class Paper {
             density : 1.2,
             restitution: 1
         }
-        this.body = Matter.Bodies.circle(x,y,this.radius/2, paper_options);
         this.radius = radius;
+        this.body = Matter.Bodies.circle(x,y,this.radius/2, paper_options);
         World.add(world, this.body);
     }
     display(){
