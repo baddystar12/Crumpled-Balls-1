@@ -1,9 +1,9 @@
 class Dustbin {
     constructor(x, y, width, height){
         var dustbin_options ={
-            restitution:1,
             friction:2,
-            density:1
+            density:1,
+            isStatic:true
         }
         this.body = Bodies.rectangle(x,y,width,height, dustbin_options);
         this.width = width;
