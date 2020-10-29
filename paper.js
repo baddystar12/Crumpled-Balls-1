@@ -1,25 +1,18 @@
 class Paper {
-    constructor(x, y){
+    constructor(x, y, radius){
         var paper_options = {
             friction : 0.5,
             density : 1.2,
-            restitution: 0.3,
-            isStatic:false
+            restitution: 1
         }
-        this.body = Bodies.rectangle(x,y,width, height, paper_options);
-        this.height = 50;
-        this.width = 50;
+        this.body = Matter.Bodies.circle(x,y,this.radius/2, paper_options);
+        this.radius = radius;
         World.add(world, this.body);
     }
     display(){
         var position = this.body.position;
-        var angle = this.body.angle;
-        push();
-        translate(position.x, position.y);
-        rotate(angle);
-        ellipseMode(CENTER);
         fill("turquoise");
-        rect(0, 0, this.width, this.height);
-        pop();
+        ellipseMode(RADIUS);
+        ellipse(position.x, position.y, this.radius, this.radius);
     }
 }
