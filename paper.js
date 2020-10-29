@@ -3,7 +3,7 @@ class Paper {
         var paper_options = {
             friction : 0.5,
             density : 1.2,
-            restitution: 1
+            restitution: 0.8
         }
         this.radius = radius;
         this.body = Matter.Bodies.circle(x,y,this.radius/2, paper_options);
